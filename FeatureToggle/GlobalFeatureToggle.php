@@ -32,6 +32,9 @@ class GlobalFeatureToggle implements FeatureToggleInterface {
         }
     }
 
+    /**
+     * @return string
+     */
     public function getName()
     {
         return 'global';

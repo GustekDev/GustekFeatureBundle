@@ -13,9 +13,18 @@ use Gustek\FeatureBundle\FeatureToggle\FeatureToggleInterface;
 
 interface FeatureInterface {
 
+    /**
+     * @param FeatureToggleInterface $featureToggleInterface
+     */
     public function addToggle(FeatureToggleInterface $featureToggleInterface);
 
+    /**
+     * @return bool
+     */
     public function isEnabled();
 
+    /**
+     * @return string
+     */
     public function getName();
 } 

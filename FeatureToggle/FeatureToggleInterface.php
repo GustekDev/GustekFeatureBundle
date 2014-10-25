@@ -21,5 +21,8 @@ interface FeatureToggleInterface {
      */
     public function setOptions($options);
 
+    /**
+     * @return string
+     */
     public function getName();
 } 
