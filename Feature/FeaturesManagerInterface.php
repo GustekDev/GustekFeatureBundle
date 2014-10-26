@@ -13,4 +13,5 @@ interface FeaturesManagerInterface {
 
     public function addFeature(FeatureInterface $feature);
 
+    public function addToggleId($id, $alias);
 } 

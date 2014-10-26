@@ -4,13 +4,23 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--
+    <parameters>
+        <parameter key="gustek.features.manager">Gustek\FeatureBundle\Feature\FeaturesManager</parameter>
+    </parameters>
+
     <services>
-        <service id="gustek_feature.example" class="Gustek\FeatureBundle\Example">
-            <argument type="service" id="service_id" />
-            <argument>plain_value</argument>
-            <argument>%parameter_name%</argument>
+        <service id="gustek.features" class="%gustek.features.manager%" >
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+        <service id="gustek.feature.toggle.global" class="Gustek\FeatureBundle\FeatureToggle\GlobalFeatureToggle" scope="prototype">
+            <tag name="gustek.feature.toggle" alias="global" />
+        </service>
+        <service id="gustek.feature.toggle.role" class="Gustek\FeatureBundle\FeatureToggle\RoleFeatureToggle" scope="prototype">
+            <argument type="service" id="security.context" />
+            <tag name="gustek.feature.toggle" alias="role" />
         </service>
     </services>
-    -->
+
 </container>
