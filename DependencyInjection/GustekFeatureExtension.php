@@ -24,5 +24,11 @@ class GustekFeatureExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+
+        $featuresManager = $container->getDefinition('gustek.features');
+
+        foreach ($config['features'] as $featureName => $toggles) {
+            $featuresManager->addMethodCall([$featureName, $toggles]);
+        }
     }
 }

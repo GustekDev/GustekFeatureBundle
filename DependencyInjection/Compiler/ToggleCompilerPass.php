@@ -30,7 +30,7 @@ class ToggleCompilerPass implements CompilerPassInterface
 
         foreach ($taggedServices as $id => $attributes) {
             $definition->addMethodCall(
-                'addTransport',
+                'addToggleId',
                 [$id, $attributes['alias']]
             );
         }

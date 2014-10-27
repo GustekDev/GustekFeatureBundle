@@ -11,7 +11,7 @@ namespace Gustek\FeatureBundle\Feature;
 
 interface FeaturesManagerInterface {
 
-    public function addFeature(FeatureInterface $feature);
+    public function addFeature($name, $toggles);
 
     public function addToggleId($id, $alias);
 } 

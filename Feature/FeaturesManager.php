@@ -9,6 +9,7 @@
 namespace Gustek\FeatureBundle\Feature;
 
 
+use Gustek\FeatureBundle\FeatureToggle\FeatureToggleInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -20,9 +21,19 @@ class FeaturesManager implements FeaturesManagerInterface, ContainerAwareInterfa
     /** @var string[] */
     private $togglesIds = [];
 
-    public function addFeature(FeatureInterface $feature)
+    /** @var FeatureInterface[] */
+    private $features = [];
+
+    public function addFeature($name, $toggles)
     {
-        // TODO: Implement addFeature() method.
+        $feature = new Feature($name);
+        foreach ($toggles as $toggleAlias => $options) {
+            /** @var FeatureToggleInterface $toggle */
+            $toggle = $this->container->get($this->togglesIds[$toggleAlias]);
+            $toggle->setOptions($options);
+            $feature->addToggle($toggle);
+        }
+        $this->features[$name] = $feature;
     }
 
     public function addToggleId($id, $alias)
