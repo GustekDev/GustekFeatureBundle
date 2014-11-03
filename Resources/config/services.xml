@@ -5,7 +5,6 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="gustek.features.settings.config" class="Gustek\FeatureBundle\FeatureSettings\FeatureSettingsConfig" />
         <service id="gustek.features.toggleContainer" class="Gustek\FeatureBundle\Feature\TogglesContainer" public="false">
             <argument type="service" id="service_container" />
         </service>

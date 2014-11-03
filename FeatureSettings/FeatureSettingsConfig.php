@@ -21,6 +21,6 @@ class FeatureSettingsConfig implements FeatureSettingsInterface
 
     public function getToggles($featureName)
     {
-        return $this->featuresSettings[$featureName];
+        return $this->featuresSettings[$featureName]['toggles'];
     }
 }

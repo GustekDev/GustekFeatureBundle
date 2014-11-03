@@ -16,23 +16,25 @@ class ToggleCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('gustek.features')) {
+        if (!$container->hasDefinition('gustek.features.toggleContainer')) {
             return;
         }
 
         $definition = $container->getDefinition(
-            'gustek.features'
+            'gustek.features.toggleContainer'
         );
 
         $taggedServices = $container->findTaggedServiceIds(
             'gustek.feature.toggle'
         );
 
-        foreach ($taggedServices as $id => $attributes) {
-            $definition->addMethodCall(
-                'addToggleId',
-                [$id, $attributes['alias']]
-            );
+        foreach ($taggedServices as $id => $tagAttributes) {
+            foreach ($tagAttributes as $attributes) {
+                $definition->addMethodCall(
+                    'addToggleId',
+                    [$attributes['alias'], $id]
+                );
+            }
         }
     }
 }

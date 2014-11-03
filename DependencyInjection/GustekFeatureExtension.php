@@ -30,7 +30,12 @@ class GustekFeatureExtension extends Extension
         switch ($config['settings'])
         {
             case 'config':
+                $configDefinition = new Definition(
+                    'Gustek\FeatureBundle\FeatureSettings\FeatureSettingsConfig', [$config['features']]
+                );
+                $container->setDefinition('gustek.features.settings.config', $configDefinition);
                 $settingsLoader = new Reference('gustek.features.settings.config');
+
                 break;
             default:
                 $settingsLoader = new Reference($config['settings']);
