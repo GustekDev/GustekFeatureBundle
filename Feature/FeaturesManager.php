@@ -52,4 +52,22 @@ class FeaturesManager implements FeaturesManagerInterface, ContainerAwareInterfa
     {
         $this->container = $container;
     }
+
+    /**
+     * @param $name
+     * @return Feature
+     */
+    public function getFeature($name)
+    {
+        return $this->features[$name];
+    }
+
+    /**
+     * @param $name
+     * @return bool
+     */
+    public function isEnabled($name)
+    {
+        return $this->features[$name]->isEnabled();
+    }
 }

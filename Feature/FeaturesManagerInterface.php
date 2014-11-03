@@ -13,5 +13,17 @@ interface FeaturesManagerInterface {
 
     public function addFeature($name, $toggles);
 
+    /**
+     * @param $name
+     * @return Feature
+     */
+    public function getFeature($name);
+
+    /**
+     * @param $name
+     * @return bool
+     */
+    public function isEnabled($name);
+
     public function addToggleId($id, $alias);
 } 
