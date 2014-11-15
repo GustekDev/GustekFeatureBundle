@@ -16,7 +16,7 @@ class Feature
     private $name;
 
     /** @var FeatureToggleInterface[] */
-    private $toggles = [];
+    private $toggles = array();
 
     public function __construct($name, FeatureSettingsInterface $featureSettings, TogglesContainer $togglesContainer)
     {

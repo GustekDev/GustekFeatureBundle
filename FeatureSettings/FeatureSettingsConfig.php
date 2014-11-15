@@ -12,7 +12,7 @@ namespace Gustek\FeatureBundle\FeatureSettings;
 class FeatureSettingsConfig implements FeatureSettingsInterface
 {
 
-    private $featuresSettings = [];
+    private $featuresSettings = array();
 
     public function __construct($featureSettings)
     {

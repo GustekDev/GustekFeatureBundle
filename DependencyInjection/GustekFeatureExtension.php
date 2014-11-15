@@ -31,7 +31,7 @@ class GustekFeatureExtension extends Extension
         {
             case 'config':
                 $configDefinition = new Definition(
-                    'Gustek\FeatureBundle\FeatureSettings\FeatureSettingsConfig', [$config['features']]
+                    'Gustek\FeatureBundle\FeatureSettings\FeatureSettingsConfig', array($config['features'])
                 );
                 $container->setDefinition('gustek.features.settings.config', $configDefinition);
                 $settingsLoader = new Reference('gustek.features.settings.config');
@@ -45,12 +45,12 @@ class GustekFeatureExtension extends Extension
         $togglesContainer = new Reference('gustek.features.toggleContainer');
         foreach ($config['features'] as $featureName => $featureConfig)
         {
-            $featureDefinition = new Definition('Gustek\FeatureBundle\Feature\Feature', [
+            $featureDefinition = new Definition('Gustek\FeatureBundle\Feature\Feature', array(
                 $featureName,
                 $settingsLoader,
                 $togglesContainer,
 
-            ]);
+            ));
             $container->setDefinition('gustek.feature.' . $featureName, $featureDefinition);
         }
     }

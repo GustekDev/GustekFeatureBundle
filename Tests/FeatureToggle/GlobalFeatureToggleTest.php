@@ -25,12 +25,12 @@ class GlobalFeatureToggleTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testIsEnabled_Enabled() {
-        $this->globalToggle->setOptions([ 'enabled' => true ]);
+        $this->globalToggle->setOptions(array('enabled' => true));
         $this->assertTrue($this->globalToggle->isEnabled());
     }
 
     public function testIsEnabled_Disabled() {
-        $this->globalToggle->setOptions([ 'enabled' => false ]);
+        $this->globalToggle->setOptions(array('enabled' => false));
         $this->assertFalse($this->globalToggle->isEnabled());
     }
 
@@ -38,4 +38,3 @@ class GlobalFeatureToggleTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals('global', $this->globalToggle->getName());
     }
 }
- 

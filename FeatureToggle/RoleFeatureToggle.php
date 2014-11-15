@@ -8,7 +8,6 @@
 
 namespace Gustek\FeatureBundle\FeatureToggle;
 
-
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
 class RoleFeatureToggle implements FeatureToggleInterface {
@@ -17,7 +16,7 @@ class RoleFeatureToggle implements FeatureToggleInterface {
     private $securityContext;
 
     /** @var string[] */
-    private $roles = [];
+    private $roles = array();
 
     public function __construct(SecurityContextInterface $securityContext) {
         $this->securityContext = $securityContext;

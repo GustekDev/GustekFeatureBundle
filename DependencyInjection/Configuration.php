@@ -32,7 +32,7 @@ class Configuration implements ConfigurationInterface
                         ->prototype('variable')
                             ->beforeNormalization()
                                 ->ifString()
-                                ->then(function ($v) { return [$v]; })
+                                ->then(function ($v) { return array($v); })
                             ->end()
                         ->end()
                     ->end()

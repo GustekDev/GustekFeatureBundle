@@ -32,7 +32,7 @@ class ToggleCompilerPass implements CompilerPassInterface
             foreach ($tagAttributes as $attributes) {
                 $definition->addMethodCall(
                     'addToggleId',
-                    [$attributes['alias'], $id]
+                    array($attributes['alias'], $id)
                 );
             }
         }

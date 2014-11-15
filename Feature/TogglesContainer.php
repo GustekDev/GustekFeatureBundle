@@ -16,7 +16,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class TogglesContainer {
 
     /** @var string[] */
-    private $toggles = [];
+    private $toggles = array();
 
     /** @var ContainerInterface */
     private $container;
