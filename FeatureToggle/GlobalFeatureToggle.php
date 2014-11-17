@@ -27,9 +27,7 @@ class GlobalFeatureToggle implements FeatureToggleInterface {
      */
     public function setOptions($options)
     {
-        if (isset($options['enabled'])) {
-            $this->enabled = $options['enabled'];
-        }
+        $this->enabled = (bool) $options;
     }
 
     /**
