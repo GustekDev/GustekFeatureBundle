@@ -1,0 +1,26 @@
+{
+    "name": "Gustek/FeatureBundle",
+    "type": "library",
+    "description": "This library provides easy way to manage feature toggles",
+    "keywords": ["feature"],
+    "homepage": "http://github.com/Guzol/GustekFeatureBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrzej Gustyn",
+            "email": "gustynandrzej@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload": {
+        "psr-4": { "Gustek\\FeatureBundle": "" }
+    },
+    "target-dir": "Gustek/FeatureBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
