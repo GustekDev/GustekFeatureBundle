@@ -23,7 +23,7 @@ class GlobalFeatureToggle implements FeatureToggleInterface {
     }
 
     /**
-     * @param array $options
+     * @param mixed $options
      */
     public function setOptions($options)
     {

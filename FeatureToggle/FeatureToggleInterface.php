@@ -17,7 +17,7 @@ interface FeatureToggleInterface {
     public function isEnabled();
 
     /**
-     * @param array $options
+     * @param mixed $options
      */
     public function setOptions($options);
 

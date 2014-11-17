@@ -40,9 +40,10 @@ class RoleFeatureToggle implements FeatureToggleInterface {
      */
     public function setOptions($options)
     {
-        if (isset($options['roles'])) {
-            $this->roles = $options['roles'];
+        if (!is_array($options)) {
+            $options = array($options);
         }
+        $this->roles = $options;
     }
 
     /**

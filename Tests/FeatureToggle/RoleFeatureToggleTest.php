@@ -35,7 +35,7 @@ class RoleFeatureToggleTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsEnabled_HasRole() {
         $role = 'SOME_ROLE';
-        $this->roleToggle->setOptions(array('roles' => array($role)));
+        $this->roleToggle->setOptions($role);
         $this->mockSecurityContext->expects($this->once())
             ->method('isGranted')
             ->with($role)
@@ -50,7 +50,7 @@ class RoleFeatureToggleTest extends \PHPUnit_Framework_TestCase {
             array('SOME_ROLE', null, false),
             array('OTHER_ROLE', null, true),
         );
-        $this->roleToggle->setOptions(array('roles' => array($role, $otherRole)));
+        $this->roleToggle->setOptions(array($role, $otherRole));
         $this->mockSecurityContext->expects($this->any())
             ->method('isGranted')
             ->will($this->returnValueMap($returnMap));
@@ -64,7 +64,7 @@ class RoleFeatureToggleTest extends \PHPUnit_Framework_TestCase {
             array('SOME_ROLE', null, false),
             array('OTHER_ROLE', null, false),
         );
-        $this->roleToggle->setOptions(array('roles' => array($role, $otherRole)));
+        $this->roleToggle->setOptions(array($role, $otherRole));
         $this->mockSecurityContext->expects($this->any())
             ->method('isGranted')
             ->will($this->returnValueMap($returnMap));
@@ -73,7 +73,7 @@ class RoleFeatureToggleTest extends \PHPUnit_Framework_TestCase {
 
     public function testIsEnabled_DoesntHaveRole() {
         $role = 'SOME_ROLE';
-        $this->roleToggle->setOptions(array('roles' => array($role)));
+        $this->roleToggle->setOptions($role);
         $this->mockSecurityContext->expects($this->once())
             ->method('isGranted')
             ->with($role)
