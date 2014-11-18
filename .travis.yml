@@ -13,6 +13,7 @@ env:
 
 before_script:
   - composer require symfony/framework-bundle:${SYMFONY_VERSION}
-  - composer install --prefer-source --no-interaction
-
-script: phpunit --coverage-text
+  - composer update --prefer-dist
+script:
+  - vendor/bin/phpunit
+  - vendor/bin/phpcs -p --standard=PSR2 --ignore=vendor/,Tests/app/ ./
