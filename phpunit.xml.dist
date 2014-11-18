@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="vendor/autoload.php">
+<phpunit colors="true" bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="GustekFeatureBundle for the Symfony Framework test">
-            <directory>./Tests</directory>
+            <directory suffix="Test.php">./Tests</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory>.</directory>
+            <directory>./</directory>
             <exclude>
                 <directory>./Resources</directory>
                 <directory>./Tests</directory>
