@@ -9,11 +9,9 @@ env:
   - SYMFONY_VERSION=2.1.*
   - SYMFONY_VERSION=2.2.*
   - SYMFONY_VERSION=2.3.*
-  - SYMFONY_VERSION=dev-master
 
 before_script:
   - composer require symfony/framework-bundle:${SYMFONY_VERSION}
   - composer update --prefer-dist
 script:
   - vendor/bin/phpunit
-  - vendor/bin/phpcs -p --standard=PSR2 --ignore=vendor/,Tests/app/ ./
