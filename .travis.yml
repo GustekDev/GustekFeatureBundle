@@ -13,5 +13,6 @@ env:
 
 before_script:
   - composer require symfony/framework-bundle:${SYMFONY_VERSION}
+  - composer install --prefer-source --no-interaction
 
 script: phpunit --coverage-text
