@@ -12,4 +12,6 @@ env:
   - SYMFONY_VERSION=dev-master
 
 before_script:
-  - composer require symfony/framework-bundle:${SYMFONY_VERSION} --dev
+  - composer require symfony/framework-bundle:${SYMFONY_VERSION}
+
+script: phpunit --coverage-text
