@@ -35,4 +35,22 @@ class GlobalFeatureToggleTest extends \PHPUnit_Framework_TestCase {
     public function testGetName() {
         $this->assertEquals('global', $this->globalToggle->getName());
     }
+
+    public function testToString_Disabled() {
+        $this->globalToggle->setOptions(false);
+        $string = $this->globalToggle->__toString();
+        $this->assertEquals(
+            'Global: [ enabled: No ]',
+            $string
+        );
+    }
+
+    public function testToString_Enabled() {
+        $this->globalToggle->setOptions(true);
+        $string = $this->globalToggle->__toString();
+        $this->assertEquals(
+            'Global: [ enabled: Yes ]',
+            $string
+        );
+    }
 }

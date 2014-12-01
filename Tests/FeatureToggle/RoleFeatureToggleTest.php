@@ -78,4 +78,26 @@ class RoleFeatureToggleTest extends \PHPUnit_Framework_TestCase {
             ->willReturn(false);
         $this->assertFalse($this->roleToggle->isEnabled());
     }
+
+
+    public function testToString_OneRole() {
+        $role = 'SOME_ROLE';
+        $this->roleToggle->setOptions($role);
+        $string = $this->roleToggle->__toString();
+        $this->assertEquals(
+            'Role: [ roles: SOME_ROLE ]',
+            $string
+        );
+    }
+
+    public function tesToString_MultipleRoles() {
+        $role = 'SOME_ROLE';
+        $otherRole = 'OTHER_ROLE';
+        $this->roleToggle->setOptions(array($role, $otherRole));
+        $string = $this->roleToggle->__toString();
+        $this->assertEquals(
+            'Role: [ roles: SOME_ROLE, OTHER_ROLE ]',
+            $string
+        );
+    }
 }
