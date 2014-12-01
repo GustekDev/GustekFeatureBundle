@@ -18,12 +18,16 @@ class FeatureSettingsConfigTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
         $this->features = array(
             'feature1' => array(
-                'toggle1' => 'option1',
-                'toggle2' => 'option2',
+                'toggles' => array(
+                    'toggle1' => 'option1',
+                    'toggle2' => 'option2',
+                ),
             ),
             'feature2' => array(
-                'someToggle' => 'someOption',
-                'otherToggle' => 'otherOption',
+                'toggles' => array(
+                    'someToggle' => 'someOption',
+                    'otherToggle' => 'otherOption',
+                ),
             )
         );
         $this->featureSettingsConfig = new FeatureSettingsConfig($this->features);
@@ -38,8 +42,8 @@ class FeatureSettingsConfigTest extends \PHPUnit_Framework_TestCase {
         $toggles1 = $this->featureSettingsConfig->getToggles('feature1');
         $toggles2 = $this->featureSettingsConfig->getToggles('feature2');
 
-        $this->assertEquals($this->features[0], $toggles1);
-        $this->assertEquals($this->features[1], $toggles2);
+        $this->assertEquals($this->features['feature1']['toggles'], $toggles1);
+        $this->assertEquals($this->features['feature2']['toggles'], $toggles2);
     }
 
 }
