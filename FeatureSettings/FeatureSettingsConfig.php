@@ -1,14 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 03/11/14
- * Time: 21:10
- */
 
 namespace Gustek\FeatureBundle\FeatureSettings;
 
-
+/**
+ * Class FeatureSettingsConfig
+ *
+ * @author Gustek
+ */
 class FeatureSettingsConfig implements FeatureSettingsInterface
 {
 

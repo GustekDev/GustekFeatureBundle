@@ -1,16 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 25/10/14
- * Time: 19:10
- */
 
 namespace Gustek\FeatureBundle\Tests\FeatureToggle;
 
-
 use Gustek\FeatureBundle\FeatureToggle\RoleFeatureToggle;
 
+/**
+ * Class RoleFeatureToggleTest
+ *
+ * @author Gustek
+ */
 class RoleFeatureToggleTest extends \PHPUnit_Framework_TestCase {
 
     /** @var RoleFeatureToggle */

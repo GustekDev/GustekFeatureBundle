@@ -1,18 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 03/11/14
- * Time: 20:58
- */
 
 namespace Gustek\FeatureBundle\Feature;
-
 
 use Gustek\FeatureBundle\FeatureToggle\FeatureToggleInterface;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
+/**
+ * Class TogglesContainer
+ *
+ * @author Gustek
+ */
 class TogglesContainer {
 
     /** @var string[] */

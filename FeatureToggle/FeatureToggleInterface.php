@@ -1,14 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 25/10/14
- * Time: 18:21
- */
 
 namespace Gustek\FeatureBundle\FeatureToggle;
 
-
+/**
+ * Interface FeatureToggleInterface
+ *
+ * @author Gustek
+ */
 interface FeatureToggleInterface {
 
     /**
@@ -25,4 +23,6 @@ interface FeatureToggleInterface {
      * @return string
      */
     public function getName();
+
+    public function __toString();
 } 

@@ -1,16 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 25/10/14
- * Time: 21:42
- */
 
 namespace Gustek\FeatureBundle\Feature;
 
 use Gustek\FeatureBundle\FeatureSettings\FeatureSettingsInterface;
 use Gustek\FeatureBundle\FeatureToggle\FeatureToggleInterface;
 
+/**
+ * Class Feature
+ *
+ * @author Gustek
+ */
 class Feature
 {
     private $name;

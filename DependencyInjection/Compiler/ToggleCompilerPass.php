@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 25/10/14
- * Time: 22:51
- */
 
 namespace Gustek\FeatureBundle\DependencyInjection\Compiler;
-
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

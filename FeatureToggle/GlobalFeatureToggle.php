@@ -1,14 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 25/10/14
- * Time: 18:26
- */
 
 namespace Gustek\FeatureBundle\FeatureToggle;
 
-
+/**
+ * Class GlobalFeatureToggle
+ *
+ * @author Gustek
+ */
 class GlobalFeatureToggle implements FeatureToggleInterface {
 
     /** @var bool */
@@ -36,5 +34,16 @@ class GlobalFeatureToggle implements FeatureToggleInterface {
     public function getName()
     {
         return 'global';
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        $string = 'Global: [ enabled: ';
+        $string .= $this->enabled ? 'Yes' : 'No';
+        $string .= ' ]';
+        return $string;
     }
 }

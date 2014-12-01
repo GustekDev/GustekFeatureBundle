@@ -1,16 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 25/10/14
- * Time: 18:27
- */
 
 namespace Gustek\FeatureBundle\Tests\FeatureToggle;
 
-
 use Gustek\FeatureBundle\FeatureToggle\GlobalFeatureToggle;
 
+/**
+ * Class GlobalFeatureToggleTest
+ *
+ * @author Gustek
+ */
 class GlobalFeatureToggleTest extends \PHPUnit_Framework_TestCase {
 
     /** @var GlobalFeatureToggle */

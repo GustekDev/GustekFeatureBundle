@@ -1,15 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gustek
- * Date: 25/10/14
- * Time: 19:10
- */
 
 namespace Gustek\FeatureBundle\FeatureToggle;
 
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
+/**
+ * Class RoleFeatureToggle
+ *
+ * @author Gustek
+ */
 class RoleFeatureToggle implements FeatureToggleInterface {
 
     /** @var SecurityContextInterface */
@@ -52,5 +51,16 @@ class RoleFeatureToggle implements FeatureToggleInterface {
     public function getName()
     {
         return 'role';
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        $string = 'Role: [ roles: ';
+        $string .= implode(', ', $this->roles);
+        $string .= ' ]';
+        return $string;
     }
 }
